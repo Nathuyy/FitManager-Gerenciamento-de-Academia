@@ -1,4 +1,4 @@
-const models = require('../models/models')
+const models = require('../models/modelsClient')
 
 const getClients = async (req, res) => {
     const clients = await models.getClients()

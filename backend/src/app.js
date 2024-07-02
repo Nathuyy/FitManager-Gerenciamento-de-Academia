@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
-const router = require('./router/router')
+const clientRouter = require('./router/routerClients')
 
 app.use(express.json())
-app.use(router)
+app.use(clientRouter);
 
 module.exports = app
