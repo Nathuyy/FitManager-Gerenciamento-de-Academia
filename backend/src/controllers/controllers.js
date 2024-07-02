@@ -44,14 +44,28 @@ const updateClient = async (req, res) => {
         res.status(200).json({ message: 'Cliente atualizado com sucesso!' })
 
     }catch(error){
-        console.error('Erro ao atualizar cliente:', error);
+        console.error('Erro ao atualizar cliente:', error)
 }
 }
+
+const deleteClient = async (req, res) => {
+
+    try{
+        const { clientId } = req.params
+        await models.deleteClient(clientId)
+        res.status(200).json({ message: 'Cliente deletado com sucesso!' })
+
+    }catch(error){
+        console.error('Erro ao deletar cliente:', error);
+}
+}
+
 
 
 module.exports = {
     getClients,
     getClientByName,
     newClient,
-    updateClient
+    updateClient,
+    deleteClient
 }

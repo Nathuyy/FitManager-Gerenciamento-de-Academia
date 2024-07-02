@@ -98,7 +98,13 @@ const updateClient = async (clientId, updatedClient) => {
         clientId 
     ])
     return result
-};
+}
+
+const deleteClient = async (clientId) => {
+    const query = 'DELETE FROM cliente WHERE id = ?'
+    const [result] = await connection.execute(query, [clientId])
+    return result
+}
 
 
 
@@ -112,7 +118,8 @@ module.exports = {
     getClients,
     getClientByName,
     newClient,
-    updateClient
+    updateClient,
+    deleteClient
     
 
 }
