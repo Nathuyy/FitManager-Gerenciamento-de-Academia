@@ -8,7 +8,7 @@ const controllers = require('../controllers/controllers')
 router.get('/clientes', controllers.getClients) //precisa de autenticação adm
 router.get('/cliente/nome', controllers.getClientByName) //precisa de autenticação adm
 router.post('/novoCliente', controllers.newClient) 
-// router.put('/atualizarCliente/:id', controllers.putClients)
+router.put('/atualizarCliente/:clientId', controllers.updateClient)
 // router.delete('/deletarCliente/:id', controllers.deleteClients)
 
 //rotas de funcionarios

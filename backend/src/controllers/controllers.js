@@ -36,9 +36,22 @@ const newClient = async (req, res) => {
     }
 }
 
+const updateClient = async (req, res) => {
+
+    try{
+        const { clientId } = req.params
+        await models.updateClient(clientId, req.body)
+        res.status(200).json({ message: 'Cliente atualizado com sucesso!' })
+
+    }catch(error){
+        console.error('Erro ao atualizar cliente:', error);
+}
+}
+
 
 module.exports = {
     getClients,
     getClientByName,
-    newClient
+    newClient,
+    updateClient
 }
