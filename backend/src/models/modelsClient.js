@@ -114,12 +114,12 @@ const deleteClient = async (clientId) => {
 
 
 
+
+
 module.exports = { 
     getClients,
     getClientByName,
     newClient,
     updateClient,
     deleteClient
-    
-
 }

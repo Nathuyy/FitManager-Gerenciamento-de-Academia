@@ -62,10 +62,12 @@ const deleteClient = async (req, res) => {
 
 
 
+
 module.exports = {
     getClients,
     getClientByName,
     newClient,
     updateClient,
-    deleteClient
+    deleteClient,
+    
 }

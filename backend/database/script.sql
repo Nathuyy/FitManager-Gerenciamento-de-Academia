@@ -1,8 +1,7 @@
-use fitmanager;
+-- Active: 1718567955594@@127.0.0.1@3306@fitmanager
 
+USE  fitmanager;
 
-----------DDL----------
-show tables;
 
 CREATE TABLE cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -115,5 +114,36 @@ CREATE TABLE historico_acessos (
     tipo_acesso ENUM('Entrada', 'Saída'),
     FOREIGN KEY (cliente_id) REFERENCES cliente(id)
 );
-----------DDL----------
 
+-- Inserir funcionários na tabela funcionarios
+INSERT INTO funcionarios (id, nome, cargo, salario, data_contratacao, telefone, endereco, cidade, estado, cep, data_nascimento, sexo, email, status)
+VALUES
+(1, 'aaa Teste', 'Treinador', 8500.00, NULL, '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', NULL, 'Masculino', 'aaa.aaa@example.com', 'Ativo'),
+(2, 'asdasd Teste', 'Treinador', 8500.00, '2024-07-01', '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', NULL, 'Masculino', 'asdasd.aaa@example.com', 'Ativo'),
+(3, 'Nathália Cericatto', 'Treinador', 8500.00, '2024-07-01', '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', '2006-02-17', 'Feminino', 'nathalia.aaa@example.com', 'Ativo'),
+(4, 'Elaibe Cericatto', 'Treinador', 8500.00, NULL, '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', NULL, 'Feminino', 'Elaibe.aaa@example.com', 'Ativo'),
+(5, 'hmm Cericatto', 'Treinador', 8500.00, '2024-07-01', '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', '2006-02-17', 'Feminino', 'hmm.aaa@example.com', 'Ativo'),
+(6, 'Gabriel Ceratti Cabral', 'Treinador', 8500.00, '2024-07-01', '+5511999999999', 'Rua das Flores, 123', 'Teste', 'RS', '90000-000', '2003-11-20', 'Masculino', 'gabriel.uau@example.com', 'Ativo');
+
+-- Inserir horários na tabela horarios
+INSERT INTO horarios (id, dia_semana, hora_abertura, hora_fechamento)
+VALUES
+(1, 'Segunda-feira', '08:00:00', '10:00:00'),
+(2, 'Segunda-feira', '10:00:00', '12:00:00'),
+(3, 'Segunda-feira', '12:00:00', '14:00:00'),
+(4, 'Segunda-feira', '14:00:00', '16:00:00'),
+(5, 'Segunda-feira', '16:00:00', '18:00:00'),
+(6, 'Segunda-feira', '18:00:00', '20:00:00'),
+(7, 'Segunda-feira', '20:00:00', '22:00:00'),
+(8, 'Segunda-feira', '22:00:00', '00:00:00'),
+(9, 'Segunda-feira', '00:00:00', '02:00:00');
+
+-- Inserir aulas na tabela aulas
+INSERT INTO aulas (id, nome_aula, instrutor_id, horario_id, sala, dia_semana)
+VALUES
+(1,'Treino Geral', 1, 1, 'Sala 1', 'Segunda-feira'),
+(2,'Treino Geral', 2, 2, 'Sala 2', 'Segunda-feira'),
+(3,'Treino Geral', 3, 3, 'Sala 3', 'Segunda-feira'),
+(4,'Treino Geral', 4, 4, 'Sala 4', 'Segunda-feira'),
+(5,'Treino Geral', 5, 5, 'Sala 5', 'Segunda-feira'),
+(6,'Treino Geral', 6, 6, 'Sala 6', 'Segunda-feira');
