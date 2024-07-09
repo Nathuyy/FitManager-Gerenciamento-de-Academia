@@ -33,11 +33,10 @@ export default function NovoCliente() {
                 status,
                 observacoes
             };
-            console.log('Enviando dados:', data); // Log para verificar os dados
             const response = await axios.post(urlNewClient, data);
             console.log(response.data);
         } catch (error) {
-            console.error('Erro ao criar novo cliente:', error); // Usar console.error para depurar
+            console.error('Erro ao criar novo cliente:', error); 
             alert('Erro ao criar novo cliente: ' + error.message);
         }
     };
