@@ -6,6 +6,17 @@ import styles from './novoCliente.module.css';
 
 const urlNewClient = 'http://localhost:3030/novoCliente';
 
+const formatDateForInput = (dateISO) => {
+    if (!dateISO) return ''; // Handle case where dateISO is undefined or null
+
+    const date = new Date(dateISO);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+
+
 export default function NovoCliente() {
     const [nomeCliente, setNomeCliente] = useState('');
     const [sobrenomeCliente, setSobrenomeCliente] = useState('');
@@ -33,8 +44,9 @@ export default function NovoCliente() {
                 status,
                 observacoes
             };
+            console.log(nascimentoCliente);
             const response = await axios.post(urlNewClient, data);
-            console.log(response.data);
+            console.log(data);
         } catch (error) {
             console.error('Erro ao criar novo cliente:', error); 
             alert('Erro ao criar novo cliente: ' + error.message);
@@ -62,15 +74,15 @@ export default function NovoCliente() {
                         onChange={(e) => setSobrenomeCliente(e.target.value)}
                         required
                     />
-                </label>   
+                </label>
                 <label>
                     Data de Nascimento:
                     <input
-                        type="date"
-                        value={nascimentoCliente} 
-                        onChange={(e) => setNascimentoCliente(e.target.value)}
-                        required
-                        />
+    type="date"
+    value={nascimentoCliente}
+    onChange={(e) => setNascimentoCliente(e.target.value)}
+    required
+/>
                 </label>
                 <label>
                     Sexo:
@@ -115,9 +127,9 @@ export default function NovoCliente() {
                 <label>
                     PlanoID:
                     <select
-                    value={plano_id} 
-                    onChange={(e) => setPlano_id(e.target.value)}
-                    required
+                        value={plano_id}
+                        onChange={(e) => setPlano_id(e.target.value)}
+                        required
                     >
                         <option value="">Selecione</option>
                         <option value="1">Plano 1</option>
@@ -144,7 +156,6 @@ export default function NovoCliente() {
                         onChange={(e) => setObservacoes(e.target.value)}
                     />
                 </label>
-                
                 <button type="submit">Criar Cliente</button>
             </form>
         </div>

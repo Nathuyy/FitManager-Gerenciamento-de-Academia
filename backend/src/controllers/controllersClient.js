@@ -23,16 +23,17 @@ const getClientByName = async (req, res) => {
 };
 
 const newClient = async (req, res) => {
-    const newClient = req.body
+    const client = req.body
+    console.log(client);
 
     try{
 
-        await models.newClient(newClient)
+        await models.newClient(client)
         res.status(201).json({ message: 'Cliente criado com sucesso!' })
 
-        } catch (error) {
-        console.error('Erro ao criar cliente:', error);
-        res.status(500).json({ error: 'Erro ao criar cliente. Por favor, tente novamente mais tarde.' });
+    } catch (error) {
+    console.error('Erro ao criar cliente:', error);
+    res.status(500).json({ error: 'Erro ao criar cliente. Por favor, tente novamente mais tarde.' });
     }
 }
 
