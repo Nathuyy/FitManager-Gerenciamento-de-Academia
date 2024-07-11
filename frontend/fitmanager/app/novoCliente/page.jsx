@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import axios from 'axios';
-import styles from './novoCliente.module.css';
 
 const urlNewClient = 'http://localhost:3030/novoCliente';
 
@@ -45,41 +44,54 @@ export default function NovoCliente() {
     };
 
     return (
-        <div className={styles['client-form']}>
-            <h1>Cadastro de Clientes</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Nome:
-                    <input
-                        type="text"
-                        value={nomeCliente}
-                        onChange={(e) => setNomeCliente(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Sobrenome:
-                    <input
-                        type="text"
-                        value={sobrenomeCliente}
-                        onChange={(e) => setSobrenomeCliente(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
+        <div className='flex items-center justify-center min-h-screen'>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md w-full md:max-w-2xl">
+            <h1 className='text-center text-black font-bold text-2xl pb-8'>Cadastro de Clientes</h1>
+            <form onSubmit={handleSubmit} className='space-y-4'>
+            <div className='grid grid-cols-2 gap-4'>
+                        <div className='flex flex-col'>
+                            <label className='text-black text-sm font-semibold'>
+                                Nome:
+                                <input
+                                    type="text"
+                                    value={nomeCliente}
+                                    onChange={(e) => setNomeCliente(e.target.value)}
+                                    className='p-1 border border-gray-300 ml-1'
+                                    required
+                                />
+                            </label>
+                        </div>
+                        <div className='flex flex-col'>
+                            <label className='text-black text-sm font-semibold'>
+                                Sobrenome:
+                                <input
+                                    type="text"
+                                    value={sobrenomeCliente}
+                                    onChange={(e) => setSobrenomeCliente(e.target.value)}
+                                    className=' p-1 border border-gray-300 ml-1'
+                                    required
+                                />
+                            </label>
+                        </div>
+                    </div>
+                    <div className='grid grid-cols-2 gap-4'>
+                    <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     Data de Nascimento:
-                    <input
-    type="date"
-    value={nascimentoCliente}
-    onChange={(e) => setNascimentoCliente(e.target.value)}
-    required
-/>
+                    <input 
+                    type="date"
+                    value={nascimentoCliente}
+                    onChange={(e) => setNascimentoCliente(e.target.value)} className='p-1 border border-gray-300 ml-1'
+                    required
+                    />
                 </label>
-                <label>
+                </div>
+                <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     Sexo:
                     <select
                         value={sexoCliente}
-                        onChange={(e) => setSexoCliente(e.target.value)}
+                        onChange={(e) => setSexoCliente(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     >
                         <option value="">Selecione</option>
@@ -88,38 +100,50 @@ export default function NovoCliente() {
                         <option value="Outro">Outro</option>
                     </select>
                 </label>
-                <label>
+                </div>
+                </div>
+                <div className='grid grid-cols-2 gap-4'>
+                    <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     Email:
                     <input
                         type="email"
                         value={emailCliente}
-                        onChange={(e) => setEmailCliente(e.target.value)}
+                        onChange={(e) => setEmailCliente(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     />
                 </label>
-                <label>
+                </div>
+                <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     Telefone:
                     <input
                         type="tel"
                         value={telefoneCliente}
-                        onChange={(e) => setTelefoneCliente(e.target.value)}
+                        onChange={(e) => setTelefoneCliente(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     />
                 </label>
-                <label>
+                </div>
+                </div>
+                <div className='grid grid-cols-2 gap-4'>
+                    <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     Endereço:
                     <input
                         type="text"
                         value={enderecoCliente}
-                        onChange={(e) => setEnderecoCliente(e.target.value)}
+                        onChange={(e) => setEnderecoCliente(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     />
                 </label>
-                <label>
+                </div>
+                <div className='flex flex-col'>
+                <label className='text-black text-sm font-semibold'>
                     PlanoID:
                     <select
                         value={plano_id}
-                        onChange={(e) => setPlano_id(e.target.value)}
+                        onChange={(e) => setPlano_id(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     >
                         <option value="">Selecione</option>
@@ -128,11 +152,15 @@ export default function NovoCliente() {
                         <option value="3">Plano 3</option>
                     </select>
                 </label>
-                <label>
+                </div>
+                </div>
+                <div className='grid grid-cols-2 gap-4'>
+                <div className="flex flex-col">
+                <label className='text-black text-sm font-semibold'>
                     Status:
                     <select
                         value={status}
-                        onChange={(e) => setStatus(e.target.value)}
+                        onChange={(e) => setStatus(e.target.value)} className='p-1 border border-gray-300 ml-1'
                         required
                     >
                         <option value="">Selecione</option>
@@ -140,15 +168,28 @@ export default function NovoCliente() {
                         <option value="Inativo">Inativo</option>
                     </select>
                 </label>
-                <label>
+                </div>
+                <div className="flex flex-col">
+                <label className='text-black text-sm font-semibold'>
                     Observações:
-                    <textarea
+                    <input 
+                        type='text'
                         value={observacoes}
-                        onChange={(e) => setObservacoes(e.target.value)}
+                        onChange={(e) => setObservacoes(e.target.value)} className="p-2 border border-gray-300 ml-1"
                     />
                 </label>
-                <button type="submit">Criar Cliente</button>
-            </form>
+                </div>
+                </div>
+                <div className='flex flex-col'>
+                        <button
+                            type="submit"
+                            className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 '
+                        >
+                            Criar Cliente
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

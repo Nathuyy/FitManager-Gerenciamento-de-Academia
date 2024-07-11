@@ -32,6 +32,7 @@ export default function ProcurarCliente() {
                 {dataCliente && dataCliente.map((client) => (
                     <li key={client.id}>
                         <p>Nome: {client.nomeCliente}</p>
+                        <p>Sobrenome: {client.sobrenomeCliente}</p>
                         <p>Email: {client.emailCliente}</p>
                         <p>Telefone: {client.telefoneCliente}</p>
                         <p>Endereço: {client.enderecoCliente}</p>
