@@ -44,7 +44,23 @@ export default function NovoCliente() {
     };
 
     return (
+        <div>
+                <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
+            <div>
+                <h1 className="text-2xl font-bold">FitManager</h1>
+            </div>
+            <nav>
+                <ul className="flex space-x-4">
+                    <li><a href="/home" className="text-white hover:text-gray-400">Home</a></li>
+                    <li><a href="/clientes" className="text-white hover:text-gray-400">Clientes</a></li>
+                    <li><a href="/novoCliente" className="text-white hover:text-gray-400">Novo Cliente</a></li>
+                    <li><a href="/procurarCliente" className="text-white hover:text-gray-400">Procurar Clientes</a></li>
+                    <li><a href="/atualizarCliente" className="text-white hover:text-gray-400">Atualizar Clientes</a></li>
+                </ul>
+            </nav>
+        </header>
         <div className='flex items-center justify-center min-h-screen'>
+            
             <div className="bg-gray-50 p-6 rounded-lg shadow-md w-full md:max-w-2xl">
             <h1 className='text-center text-black font-bold text-2xl pb-8'>Cadastro de Clientes</h1>
             <form onSubmit={handleSubmit} className='space-y-4'>
@@ -183,7 +199,7 @@ export default function NovoCliente() {
                 <div className='flex flex-col'>
                         <button
                             type="submit"
-                            className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 '
+                            className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md '
                         >
                             Criar Cliente
                         </button>
@@ -191,5 +207,7 @@ export default function NovoCliente() {
                 </form>
             </div>
         </div>
+        </div>
+
     );
 }

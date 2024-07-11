@@ -19,7 +19,23 @@ export default function ProcurarCliente() {
     }
 
     return (
-        <div>
+        <div> 
+             <header class="bg-gray-800 text-white p-6 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold">FitManager</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                <li><a href="/home" className="text-white hover:text-gray-400">Home</a></li>
+                <li><a href="/clientes" class="text-white hover:text-gray-400">Clientes</a></li>
+                    <li><a href="/novoCliente" class="text-white hover:text-gray-400">Novo Cliente</a></li>
+                    <li><a href="/procurarCliente" class="text-white hover:text-gray-400">Procurar Clientes</a></li>
+                    <li><a href="/atualizarCliente" class="text-white hover:text-gray-400">Atualizar Clientes</a></li>
+                </ul>
+            </nav>
+        </header>
+
+            
             <h1>Buscar Cliente</h1>
             <input
                 type="text"
