@@ -22,14 +22,12 @@ export default function Clientes() {
 
     return (
         <>
-        <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
+         <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
             <div>
-            <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
+                <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
             </div>
-     
         </header>
-            <div className='text-center'>
-            </div>
+    
             <div className='w-full mt-8'>
                 <table className='w-full border-collapse border border-slate-500'>
                     <thead>

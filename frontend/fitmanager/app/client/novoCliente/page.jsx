@@ -39,7 +39,7 @@ export default function NovoCliente() {
             console.log(data);
         } catch (error) {
             console.error('Erro ao criar novo cliente:', error); 
-            alert('Erro ao criar novo cliente: ' + error.message);
+            alert('Erro ao criar novo cliente: ');
         }
     };
 
@@ -47,9 +47,8 @@ export default function NovoCliente() {
         <div>
          <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
             <div>
-            <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
+                <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
             </div>
-     
         </header>
         <div className='flex items-center justify-center min-h-screen'>
             
