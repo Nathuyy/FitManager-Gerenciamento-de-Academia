@@ -58,78 +58,78 @@ export default function NovoFuncionario() {
             <form onSubmit={handleSubmit}>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Nome Completo:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Nome Completo:
                         <input type="text" value={nome} onChange={(event) => setNome(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Cargo:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Cargo:
                         <input type="text" value={cargo} onChange={(event) => setCargo(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Salário:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Salário:
                         <input type="text" value={salario} onChange={(event) => setSalario(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Data de Contratação:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Data de Contratação:
                         <input type="text" value={data_contratacao} onChange={(event) => setData_contratacao(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Telefone:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Telefone:
                         <input type="text" value={telefone} onChange={(event) => setTelefone(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Endereço:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Endereço:
                         <input type="text" value={endereco} onChange={(event) => setEndereco(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Cidade:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Cidade:
                         <input type="text" value={cidade} onChange={(event) => setCidade(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Estado:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Estado:
                         <input type="text" value={estado} onChange={(event) => setEstado(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'> 
-                    <label className='text-black text-sm font-semibold'>
-                        CEP:
+                <label className='text-black text-sm font-semibold mb-3'>
+                CEP:
                         <input type="text" value={cep} onChange={(event) => setCep(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Data de Nascimento: 
+                <label className='text-black text-sm font-semibold mb-3'>
+                Data de Nascimento: 
                         <input type="text" value={data_nascimento} onChange={(event) => setData_nascimento(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='flex flex-col'>
-                <label className='text-black text-sm font-semibold'>
-                    Sexo:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Sexo:
                     <select
                         value={sexo}
                         onChange={(e) => setSexo(e.target.value)} className='p-1 border border-gray-300 ml-1'
@@ -143,14 +143,14 @@ export default function NovoFuncionario() {
                 </label>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-black text-sm font-semibold'>
-                        Email:
+                <label className='text-black text-sm font-semibold mb-3'>
+                Email:
                         <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} className='p-1 border border-gray-300 ml-1' required/>
                     </label>
                 </div>
             </div>
-            <label className='text-black text-sm font-semibold'>
-                    Status:
+            <label className='text-black text-sm font-semibold mb-3'>
+            Status:
                     <select
                         value={status}
                         onChange={(e) => setStatus(e.target.value)} className='p-1 border border-gray-300 ml-1'
@@ -165,7 +165,7 @@ export default function NovoFuncionario() {
                 <div className='flex flex-col'>
                         <button
                             type="submit"
-                            className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md '
+                            className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md mt-3 '
                         >
                             Criar Funcionário
                         </button>
