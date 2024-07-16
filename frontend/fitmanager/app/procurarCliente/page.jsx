@@ -20,42 +20,41 @@ export default function ProcurarCliente() {
 
     return (
         <div> 
-             <header class="bg-gray-800 text-white p-6 flex justify-between items-center">
+        <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-bold">FitManager</h1>
+            <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
             </div>
-            <nav>
-                <ul class="flex space-x-4">
-                <li><a href="/home" className="text-white hover:text-gray-400">Home</a></li>
-                <li><a href="/clientes" class="text-white hover:text-gray-400">Clientes</a></li>
-                    <li><a href="/novoCliente" class="text-white hover:text-gray-400">Novo Cliente</a></li>
-                    <li><a href="/procurarCliente" class="text-white hover:text-gray-400">Procurar Clientes</a></li>
-                    <li><a href="/atualizarCliente" class="text-white hover:text-gray-400">Atualizar Clientes</a></li>
-                </ul>
-            </nav>
+     
         </header>
 
-            
-            <h1>Buscar Cliente</h1>
-            <input
+        <div className="bg-gray-200 p-6 justify-center items-center text-center">
+        <h1 className="text-lg font-bold text-gray-800 pb-2">Buscar Cliente</h1>
+            <input className="rounded-md p-1"
                 type="text"
                 value={nomeCliente}
                 onChange={(e) => setNomeCliente(e.target.value)}
                 placeholder="Nome do Cliente"
             />
-            <button onClick={handleSearch}>Procurar</button>
-            <ul>
-                {dataCliente && dataCliente.map((client) => (
-                    <li key={client.id}>
-                        <p>Nome: {client.nomeCliente}</p>
-                        <p>Sobrenome: {client.sobrenomeCliente}</p>
-                        <p>Email: {client.emailCliente}</p>
-                        <p>Telefone: {client.telefoneCliente}</p>
-                        <p>Endereço: {client.enderecoCliente}</p>
-                        <p>Plano: {client.plano_id}</p>
-                    </li>
-                ))}
-            </ul>
+            
+            <button className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-1 px-2 rounded-md ml-3' onClick={handleSearch}>
+                Procurar
+            </button>
+            </div>
+
+            <ul className=" p-6 flex flex-col items-center space-y-4">
+    {dataCliente && dataCliente.map((client) => (
+        <li key={client.id} className="bg-gray-100 p-4 rounded-md shadow-md w-full max-w-md">
+            <p className="font-bold">Id: <span className="font-normal">{client.id}</span></p>
+            <p className="font-bold">Nome: <span className="font-normal">{client.nomeCliente}</span></p>
+            <p className="font-bold">Sobrenome: <span className="font-normal">{client.sobrenomeCliente}</span></p>
+            <p className="font-bold">Email: <span className="font-normal">{client.emailCliente}</span></p>
+            <p className="font-bold">Telefone: <span className="font-normal">{client.telefoneCliente}</span></p>
+            <p className="font-bold">Endereço: <span className="font-normal">{client.enderecoCliente}</span></p>
+            <p className="font-bold">Plano: <span className="font-normal">{client.plano_id}</span></p>
+        </li>
+    ))}
+</ul>
+
             </div>
     );
 }

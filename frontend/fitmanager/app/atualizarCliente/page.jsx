@@ -38,127 +38,182 @@ export default function AtualizarCliente() {
         }
     };
 
+   
     return (
         <div>
-             <header class="bg-gray-800 text-white p-6 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold">FitManager</h1>
+            <header className="bg-gray-800 text-white p-6 flex justify-between items-center">
+                <div>
+                    <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
+                </div>
+            </header>
+
+            <div className='flex items-center justify-center min-h-screen'>
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md w-full md:max-w-2xl">
+                    <h1 className='text-center text-black font-bold text-2xl pb-8'>Atualizar Cliente</h1>
+                    <form onSubmit={handleUpdate} className='space-y-4'>
+                        <div className='grid grid-cols-2 gap-4'>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    ID do cliente:
+                                    <input
+                                        type="text"
+                                        value={clientId}
+                                        onChange={(event) => setClientId(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Nome:
+                                    <input
+                                        type="text"
+                                        value={nomeCliente}
+                                        onChange={(event) => setNomeCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2 gap-4'>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Sobrenome:
+                                    <input
+                                        type="text"
+                                        value={sobrenomeCliente}
+                                        onChange={(event) => setSobrenomeCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Data de Nascimento:
+                                    <input
+                                        type="date"
+                                        value={nascimentoCliente}
+                                        onChange={(event) => setNascimentoCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2 gap-4'>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Sexo:
+                                    <select
+                                        value={sexoCliente}
+                                        onChange={(e) => setSexoCliente(e.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    >
+                                        <option value="">Selecione</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Feminino">Feminino</option>
+                                        <option value="Outro">Outro</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Email:
+                                    <input
+                                        type="email"
+                                        value={emailCliente}
+                                        onChange={(event) => setEmailCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2 gap-4'>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Telefone:
+                                    <input
+                                        type="tel"
+                                        value={telefoneCliente}
+                                        onChange={(event) => setTelefoneCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Endereço:
+                                    <input
+                                        type="text"
+                                        value={enderecoCliente}
+                                        onChange={(event) => setEnderecoCliente(event.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2 gap-4'>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    PlanoID:
+                                    <select
+                                        value={plano_id}
+                                        onChange={(e) => setPlano_id(e.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    >
+                                        <option value="">Selecione</option>
+                                        <option value="1">Plano 1</option>
+                                        <option value="2">Plano 2</option>
+                                        <option value="3">Plano 3</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div className='flex flex-col'>
+                                <label className='text-black text-sm font-semibold'>
+                                    Status:
+                                    <select
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}
+                                        className='p-1 border border-gray-300 ml-1'
+                                        required
+                                    >
+                                        <option value="">Selecione</option>
+                                        <option value="Ativo">Ativo</option>
+                                        <option value="Inativo">Inativo</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div className='flex flex-col'>
+                            <label className='text-black text-sm font-semibold'>
+                                Observações:
+                                <input
+                                    type='text'
+                                    value={observacoes}
+                                    onChange={(event) => setObservacoes(event.target.value)}
+                                    className='p-1 border border-gray-300 ml-1'
+                                />
+                            </label>
+                        </div>
+                        <div className='flex flex-col'>
+                            <button
+                                type="submit"
+                                className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md '
+                            >
+                                Atualizar Cliente
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <nav>
-                <ul class="flex space-x-4">
-                <li><a href="/home" className="text-white hover:text-gray-400">Home</a></li>
-                <li><a href="/clientes" class="text-white hover:text-gray-400">Clientes</a></li>
-                    <li><a href="/novoCliente" class="text-white hover:text-gray-400">Novo Cliente</a></li>
-                    <li><a href="/procurarCliente" class="text-white hover:text-gray-400">Procurar Clientes</a></li>
-                    <li><a href="/atualizarCliente" class="text-white hover:text-gray-400">Atualizar Clientes</a></li>
-                </ul>
-            </nav>
-        </header>
-            <form onSubmit={handleUpdate}>
-                <label>
-                    ID do cliente:
-                    <input
-                        type="text"
-                        value={clientId}
-                        onChange={(event) => setClientId(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Nome:
-                    <input
-                        type="text"
-                        value={nomeCliente}
-                        onChange={(event) => setNomeCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Sobrenome:
-                    <input
-                        type="text"
-                        value={sobrenomeCliente}
-                        onChange={(event) => setSobrenomeCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Nascimento:
-                    <input
-                        type="text"
-                        value={nascimentoCliente}
-                        onChange={(event) => setNascimentoCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Sexo:
-                    <select
-                        value={sexoCliente}
-                        onChange={(e) => setSexoCliente(e.target.value)}
-                        required
-                    >
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                    </select>
-                </label>
-                <label>
-                    Email:
-                    <input
-                        type="text"
-                        value={emailCliente}
-                        onChange={(event) => setEmailCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Telefone:
-                    <input
-                        type="text"
-                        value={telefoneCliente}
-                        onChange={(event) => setTelefoneCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    Endereço:
-                    <input
-                        type="text"
-                        value={enderecoCliente}
-                        onChange={(event) => setEnderecoCliente(event.target.value)}
-                    />
-                </label>
-                <label>
-                    PlanoID:
-                    <select
-                        value={plano_id}
-                        onChange={(e) => setPlano_id(e.target.value)}
-                        required
-                    >
-                        <option value="">Selecione</option>
-                        <option value="1">Plano 1</option>
-                        <option value="2">Plano 2</option>
-                        <option value="3">Plano 3</option>
-                    </select>
-                </label>
-                <label>
-                    Status:
-                    <select
-                        value={status}
-                        onChange={(e) => setStatus(e.target.value)}
-                        required
-                    >
-                        <option value="">Selecione</option>
-                        <option value="Ativo">Ativo</option>
-                        <option value="Inativo">Inativo</option>
-                    </select>
-                </label>
-                <label>
-                    Observações:
-                    <input
-                        type="text"
-                        value={observacoes}
-                        onChange={(event) => setObservacoes(event.target.value)}
-                    />
-                </label>
-                <button type="submit">Atualizar</button>
-            </form>
         </div>
     );
 }
