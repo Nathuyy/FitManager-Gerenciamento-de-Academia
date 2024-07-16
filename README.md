@@ -9,9 +9,6 @@ O projeto FitManager é um sistema de gerenciamento para academias, focado em ge
 - Express.js
 - MySQL
 - JavaScript (ES6+)
+- Next.js
+- Axios
 
-### Gerenciamento de Clientes
-- Listagem de clientes
-- Busca de cliente por nome
-- Cadastro de novos clientes
-- Atualização de dados de clientes
