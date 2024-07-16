@@ -5,11 +5,7 @@ export default function Home() {
                 <div>
                     <h1 className="text-2xl font-bold"><a href="/home">FitManager</a></h1>
                 </div>
-                <nav>
-                    <ul className="flex space-x-4">
-                        <li><a href="/home" className="text-white hover:text-gray-400">Home</a></li>
-                    </ul>
-                </nav>
+                
             </header>
             <main className="p-6 flex justify-center">
                 <div className="flex space-x-6">
