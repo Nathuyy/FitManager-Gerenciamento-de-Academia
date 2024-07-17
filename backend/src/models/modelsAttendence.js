@@ -18,6 +18,8 @@ const registerAttendanceClient = async (attendance) => {
         throw error;     }
 };
 
+       
+
 module.exports = {
     registerAttendanceClient
 };
