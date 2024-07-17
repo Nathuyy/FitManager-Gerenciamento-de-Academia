@@ -68,6 +68,8 @@ const newEmployee = async (newEmployee) => {
 const getEmployeeByName = async (employeeName) => {
     try {
         const [employeeResult] = await connection.execute('SELECT * FROM funcionarios WHERE nome = ?', [employeeName])
+        console.log(employeeResult);
+
         return employeeResult.map(employee => ({
             ...employee,
             data_cadastro: tools.convertDateToBrazilianFormat(employee.data_cadastro),
@@ -108,8 +110,7 @@ const updateEmployees = async (idFunc, updatedEmployee) => {
             status
         } = updatedEmployee
 
-        const data_contratacaoISO = tools.convertDateToISO(data_contratacao)
-        const data_nascimentoISO = tools.convertDateToISO(data_nascimento)
+
 
         const query = 'UPDATE funcionarios SET nome = ?, cargo = ?, salario = ?, data_contratacao = ?, telefone = ?, endereco = ?, cidade = ?, estado = ?, cep = ?, data_nascimento = ?, sexo = ?, email = ?, status = ? WHERE id = ?'
 
@@ -117,13 +118,13 @@ const updateEmployees = async (idFunc, updatedEmployee) => {
             nome,
             cargo,
             salario,
-            data_contratacaoISO,
+            data_contratacao,
             telefone,
             endereco,
             cidade,
             estado,
             cep,
-            data_nascimentoISO,
+            data_nascimento,
             sexo,
             email,
             status,
