@@ -17,6 +17,7 @@ export default function Home() {
                             <a href="/client/procurarCliente" className="block text-gray-600 font-bold hover:text-gray-400 py-2">Procurar Cliente</a>
                             <a href="/client/atualizarCliente" className="block text-gray-600 font-bold hover:text-gray-400 py-2">Atualizar Clientes</a>
                             <a href="/client/deletarCliente" className="block text-gray-600 font-bold hover:text-gray-400 py-2">Deletar Clientes</a>
+                            <a href="/client/registrarPresenca" className="block text-gray-600 font-bold hover:text-gray-400 py-2">Registrar Presença</a>
                         </div>
                     </div>
                     <div className="bg-gray-300 p-4 rounded-md shadow-md w-full max-w-md">

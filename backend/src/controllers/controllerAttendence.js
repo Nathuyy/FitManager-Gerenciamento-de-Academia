@@ -13,11 +13,10 @@ const registerAttendanceClient = async (req, res) => {
 
         const clientId = clientResult[0].id;
 
-        // Chame a função convertendo a data corretamente
         await modelsAttendance.registerAttendanceClient({
             cliente_id: clientId,
             aula_id: aulaId,
-            data_presenca: dataPresenca, // Não precisa mais converter aqui
+            data_presenca: dataPresenca, 
             presenca: presenca
         });
 
@@ -28,6 +27,28 @@ const registerAttendanceClient = async (req, res) => {
     }
 };
 
+const getAttendanceClient = async (req, res) => {
+    const { nomeCliente } = req.body;
+
+    try {
+        const clientResult = await clientModel.getClientByName(nomeCliente);
+
+        if (clientResult.length === 0) {
+            return res.status(404).json({ message: 'Cliente não encontrado.' });
+        }
+
+        const clientId = clientResult[0].id;
+
+        const result = await modelsAttendance.getAttendanceClient(clientId);
+
+        return res.status(200).json({ result });
+    } catch (error) {
+        console.error('Erro ao registrar presença:', error);
+        return res.status(500).json({ error: 'Erro ao registrar presença. Por favor, tente novamente mais tarde.' });
+    }
+};
+
 module.exports = {
-    registerAttendanceClient
+    registerAttendanceClient,
+    getAttendanceClient
 };

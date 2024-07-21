@@ -10,4 +10,5 @@ routerClient.put('/atualizarCliente/:clientId', controllers.updateClient)
 routerClient.delete('/deletarCliente/:clientId', controllers.deleteClient)
 
 routerClient.post('/clientes/aulas/presenca', presencaController.registerAttendanceClient);
+routerClient.post('/clientes/presencas', presencaController.getAttendanceClient);
 module.exports = routerClient
