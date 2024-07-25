@@ -26,27 +26,12 @@ CREATE TABLE plano (
     duracaoMeses INT NOT NULL
 );
 
-CREATE TABLE aparelhos (
+CREATE TABLE administradores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nomeAparelho VARCHAR(60) NOT NULL,
-    tipoAparelho VARCHAR(60) NOT NULL,
-    marcaAparelho VARCHAR(60) NOT NULL,
-    modeloAparelho VARCHAR(60) NOT NULL,
-    data_aquisicao DATE,
-    ultima_manutencao DATE NOT NULL,
-    proxima_manutencao DATE NOT NULL,
-    frequencia_manutencao INT NOT NULL,
-    status ENUM('Disponível', 'Em Manutenção', 'Indisponível') DEFAULT 'Disponível'
-);
+    nome VARCHAR(100) NOT NULL,
+    senha VARCHAR(100) NOT NULL
+)
 
-CREATE TABLE manutencao (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    aparelho_id INT,
-    data_manutencao DATE NOT NULL,
-    descricao TEXT,
-    custo DECIMAL(10, 2),
-    FOREIGN KEY (aparelho_id) REFERENCES aparelhos(id)
-);
 
 CREATE TABLE funcionarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -86,17 +71,6 @@ CREATE TABLE aulas (
     FOREIGN KEY (horario_id) REFERENCES horarios(id)
 );
 
-
-CREATE TABLE pagamentos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    valor DECIMAL(10, 2) NOT NULL,
-    data_pagamento DATE NOT NULL,
-    metodo_pagamento VARCHAR(100),
-    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
-);
-
-
 CREATE TABLE presenca_aulas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cliente_id INT,
@@ -107,13 +81,6 @@ CREATE TABLE presenca_aulas (
     FOREIGN KEY (aula_id) REFERENCES aulas(id)
 );
 
-CREATE TABLE historico_acessos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    data_acesso DATETIME NOT NULL,
-    tipo_acesso ENUM('Entrada', 'Saída'),
-    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
-);
 
 -- Inserir funcionários na tabela funcionarios
 INSERT INTO funcionarios (id, nome, cargo, salario, data_contratacao, telefone, endereco, cidade, estado, cep, data_nascimento, sexo, email, status)
